@@ -24,7 +24,7 @@ export myenv=lab
 
 # Initialize variables for environment
 ```
-export MY_PUBLIC_FQDN_DNS_NAME="some.domain.com"
+export MY_PUBLIC_FQDN_DNS_NAME="registry.intranet.domain.com"
 export MY_COUNTRY_CODE="US"
 export MY_STATE="Tranquility"
 export MY_CITY_OR_LOCALITY="Peace"
