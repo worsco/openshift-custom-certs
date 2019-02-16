@@ -9,7 +9,7 @@ distinguished_name = dn
 C=US
 ST=Tranquility
 L=Peace
-O=Justice
+O=Justice For All
 CN=some.domain.com
 
 [ req_ext ]

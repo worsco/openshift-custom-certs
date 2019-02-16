@@ -25,11 +25,11 @@ export myenv=lab
 # Initialize variables for environment
 ```
 export MY_PUBLIC_FQDN_DNS_NAME="some.domain.com"
-export MY_COUNTRY_CODE=US
-export MY_STATE=Tranquility
-export MY_CITY_OR_LOCALITY=Peace
-export MY_ORGANISATION=Justice For All
-export MY_OPENSSL_CONFIG=${MY_PUBLIC_FQDN_DNS_NAME}-san.cnf
+export MY_COUNTRY_CODE="US"
+export MY_STATE="Tranquility"
+export MY_CITY_OR_LOCALITY="Peace"
+export MY_ORGANISATION="Justice For All"
+export MY_OPENSSL_CONFIG="${MY_PUBLIC_FQDN_DNS_NAME}-san.cnf"
 ```
 
 # Create the OpenSSL config with SAN
@@ -92,11 +92,11 @@ whatever provisioning steps they use.
 ```
 $ export myenv=lab
 $ export MY_PUBLIC_FQDN_DNS_NAME="some.domain.com"
-$ export MY_COUNTRY_CODE=US
-$ export MY_STATE=Tranquility
-$ export MY_CITY_OR_LOCALITY=Peace
-$ export MY_ORGANISATION=Justice For All
-$ export MY_OPENSSL_CONFIG=${MY_PUBLIC_FQDN_DNS_NAME}-san.cnf
+$ export MY_COUNTRY_CODE="US"
+$ export MY_STATE="Tranquility"
+$ export MY_CITY_OR_LOCALITY="Peace"
+$ export MY_ORGANISATION="Justice For All"
+$ export MY_OPENSSL_CONFIG="${MY_PUBLIC_FQDN_DNS_NAME}-san.cnf"
 $ cat > env/$myenv/${MY_OPENSSL_CONFIG} << END_OF_FILE
 > [ req ]
 > default_bits       = 2048
@@ -125,57 +125,57 @@ $ MYDATE=`date +%Y-%m-%d-%H%M%S` && \
 > -keyout env/$myenv/$MYDATE-${MY_PUBLIC_FQDN_DNS_NAME}.key \
 > -config env/$myenv/${MY_OPENSSL_CONFIG}
 Generating a 2048 bit RSA private key
-.........+++
-...........................................................+++
-writing new private key to 'env/lab/2019-02-16-142123-some.domain.com.key'
+..................................................+++
+.........................................................+++
+writing new private key to 'env/lab/2019-02-16-144649-some.domain.com.key'
 -----
 $ openssl req -noout -text \
 > -in env/$myenv/$MYDATE-${MY_PUBLIC_FQDN_DNS_NAME}.csr
 Certificate Request:
     Data:
         Version: 0 (0x0)
-        Subject: C=US, ST=Tranquility, L=Peace, O=Justice, CN=some.domain.com
+        Subject: C=US, ST=Tranquility, L=Peace, O=Justice For All, CN=some.domain.com
         Subject Public Key Info:
             Public Key Algorithm: rsaEncryption
                 Public-Key: (2048 bit)
                 Modulus:
-                    00:a0:b4:52:67:aa:65:12:7c:c4:20:a4:98:47:9e:
-                    23:e3:20:ba:57:08:36:88:98:60:7c:0a:e6:14:e5:
-                    cf:08:6c:1e:50:65:68:7d:72:93:47:e2:6f:17:7d:
-                    c8:d3:25:a5:f0:84:60:cd:c4:cc:c0:5c:b2:83:6a:
-                    a1:05:6b:ff:e0:52:d8:1c:e5:36:a3:00:63:77:02:
-                    06:c4:19:9b:40:aa:ea:a9:d5:12:53:27:7a:d4:be:
-                    8b:87:df:a4:9f:60:7e:78:4a:d6:a5:a0:86:04:c2:
-                    42:5a:fa:f4:e2:96:70:f0:fb:e9:6b:42:14:27:c0:
-                    02:3a:80:a3:69:21:1d:48:ca:2d:06:13:cb:a1:73:
-                    c2:df:fa:2c:1f:dd:49:f4:a0:bf:4d:24:ab:72:d6:
-                    c8:0e:14:a5:ee:68:38:4e:d4:cd:f6:62:dc:46:d6:
-                    08:bc:a4:7f:68:75:85:fa:f4:a6:49:e9:d8:e7:c7:
-                    3f:85:36:1a:46:4a:a1:95:8c:43:cf:eb:75:9a:41:
-                    e0:b7:b2:d1:3f:97:77:12:65:ad:b5:46:bf:94:35:
-                    5a:f3:20:06:13:3e:c4:a5:17:e7:52:1a:21:d0:46:
-                    3d:58:5d:69:cc:91:21:23:61:2e:cb:9d:18:81:f0:
-                    f9:49:94:95:e2:76:47:7c:8f:1d:5f:d6:b9:fa:09:
-                    53:cd
+                    00:95:a8:88:a6:ef:97:fd:17:64:74:aa:6c:fe:8a:
+                    92:5e:f9:df:5d:7b:0a:27:3e:13:97:93:28:92:8f:
+                    11:05:b0:0b:78:a0:de:d0:53:bb:7f:40:da:d4:2c:
+                    52:7a:71:c1:09:a8:9c:ad:fc:c1:95:b4:9c:d9:2f:
+                    e6:61:5e:ff:4d:aa:99:5a:61:28:91:35:b1:7b:4d:
+                    45:42:62:3f:71:5b:5d:89:4a:5d:2d:20:8d:07:c6:
+                    66:70:69:41:0c:94:5c:54:ff:a5:00:19:94:b6:ab:
+                    3d:e6:69:8d:09:25:7d:1e:4d:df:07:fd:ae:f3:9b:
+                    ec:d3:6b:ef:de:71:bd:9e:9e:53:4a:21:f0:24:ef:
+                    c9:b8:84:ca:db:1f:30:34:ec:a3:85:b8:1f:89:58:
+                    ef:0b:23:91:79:1e:8b:ab:09:6b:b7:8e:53:4e:38:
+                    3d:6f:cb:e8:f7:0e:c4:8e:7a:d4:ee:85:53:6b:e7:
+                    e8:ed:cb:c0:18:0e:8b:5a:08:40:31:1c:24:bc:c7:
+                    b1:40:62:b6:59:22:74:4f:cf:21:e5:1b:ec:bf:ef:
+                    cf:5d:24:b1:f1:e6:66:c5:3d:f8:71:d2:a6:13:9a:
+                    4c:95:8b:f5:83:a9:ee:47:d4:33:7c:72:67:08:5b:
+                    44:0f:ff:92:98:6c:4e:68:85:37:27:1c:fc:09:5d:
+                    89:59
                 Exponent: 65537 (0x10001)
         Attributes:
         Requested Extensions:
             X509v3 Subject Alternative Name:
                 DNS:docker-registry.default.svc.cluster.local, DNS:docker-registry.default.svc
     Signature Algorithm: sha256WithRSAEncryption
-         07:17:97:de:04:6b:f9:6b:33:14:35:c2:65:7f:f6:27:80:ee:
-         68:87:05:54:8b:d8:bf:13:4a:5f:97:39:1f:e4:7c:ce:92:66:
-         a4:3e:1a:83:c3:96:c3:53:41:1c:99:8c:a0:7d:07:ae:c3:21:
-         98:d3:c4:23:93:60:7d:b6:5f:c5:33:5e:0b:9c:73:61:aa:cb:
-         bb:ac:0c:ae:74:95:40:51:78:94:3f:c3:bc:d0:20:f6:bc:09:
-         7d:70:c6:1a:12:95:44:6b:ed:3b:e7:f8:16:3d:4f:35:f4:af:
-         a5:cc:4d:9f:d5:ab:96:97:9d:e3:82:f4:e3:46:aa:63:dd:25:
-         42:f8:96:6d:dc:d7:29:4d:59:6d:c0:74:ee:ca:51:f5:13:ec:
-         04:17:b5:65:8c:47:a4:f9:f4:60:70:40:f7:d3:62:06:24:7f:
-         04:2b:fa:78:e9:f4:48:74:5e:b9:25:3b:ca:68:36:5e:09:d8:
-         5f:21:cc:56:f7:52:48:81:33:79:ba:ce:57:d6:60:05:54:88:
-         9f:e5:11:df:9e:3b:a9:2a:74:40:a0:25:96:67:0e:80:f6:be:
-         0b:7b:bb:69:73:59:e3:7e:04:63:d3:b2:8d:fe:14:9e:51:e6:
-         6d:0a:2e:08:b0:2e:c8:0e:3e:90:04:cb:2d:65:9f:d5:55:f1:
-         36:eb:fc:0e
+         8b:d6:64:c2:ea:80:c6:eb:e0:7b:d7:23:12:05:75:b7:59:cd:
+         96:7a:a4:12:73:c5:24:9a:a6:0e:f1:78:d7:ae:bb:c6:a6:b2:
+         dc:64:da:c2:89:db:14:d4:41:e7:a0:bb:ba:73:f3:fd:05:99:
+         ce:c7:98:5c:df:ea:bc:66:1f:bd:6c:65:d4:de:72:7d:2e:cd:
+         60:4b:b9:48:31:58:27:d3:6a:09:de:d0:37:56:6c:54:b1:a5:
+         cc:c9:0f:8b:cb:c9:23:cf:a6:b1:6f:a4:8c:5c:16:a0:29:c7:
+         b6:e3:a0:1a:f8:6b:d0:09:c2:40:c9:86:06:50:a9:51:1b:33:
+         63:7b:23:51:35:59:48:44:09:99:6d:d8:9e:bf:b4:30:58:43:
+         ce:b5:74:f4:13:14:35:e2:f1:30:d1:b2:5a:72:cd:fd:d5:3d:
+         67:bf:be:70:cb:39:6d:ce:ec:2e:f2:d0:74:a0:6c:49:39:f6:
+         bb:21:22:2f:59:cd:65:0e:31:68:67:c5:13:77:2a:26:46:b0:
+         d0:b4:ac:f5:7b:22:f2:d9:7b:e0:bd:66:eb:78:6c:31:0d:f6:
+         53:9d:2d:73:65:4c:6c:37:55:52:b9:48:bb:fa:ea:f6:f8:ea:
+         ef:ad:3f:55:1d:5d:b0:23:f3:68:fd:b4:a0:3c:68:41:46:06:
+         96:f8:5f:af
 ```
