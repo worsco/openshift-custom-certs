@@ -82,6 +82,12 @@ openssl pkcs7 -print_certs -in ca.p7b -out ca.pem
 openssl x509 -in ca.pem -noout -text
 ```
 
+# Next steps
+
+Use your CSR to generate the certificate from your certificate provider.
+Ensure they do not over-write your SAN or they duplicate your SAN with
+whatever provisioning steps they use.
+
 # Example run:
 ```
 $ export myenv=lab
